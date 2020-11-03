@@ -7,7 +7,7 @@ Intro project to using Kubernetes where you need to deploy a cluster with multip
 You must have ```Docker```, ```VirtualBox```, ```minikube``` and ```kubectl``` installed.
 
 ```shell
-./setup
+./setup.sh
 ```
 
 ## Features
