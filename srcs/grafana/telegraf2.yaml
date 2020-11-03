@@ -224,7 +224,3 @@ data:
     insecure_skip_verify = true
     bearer_token_string = "##BEAR##"
 
-    # [[inputs.kube_inventory]]
-    # url = "https://kubernetes"
-    # insecure_skip_verify = true
-    # resource_include = [ "pods" ]

@@ -15,22 +15,10 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 8,
+  "id": 3,
   "links": [],
   "panels": [
     {
-      "cards": {
-        "cardPadding": null,
-        "cardRound": null
-      },
-      "color": {
-        "cardColor": "#b4ff00",
-        "colorScale": "sqrt",
-        "colorScheme": "interpolateOranges",
-        "exponent": 0.5,
-        "mode": "spectrum"
-      },
-      "dataFormat": "timeseries",
       "datasource": "InfluxDB",
       "gridPos": {
         "h": 9,
@@ -38,15 +26,36 @@
         "x": 0,
         "y": 0
       },
-      "heatmap": {},
-      "hideZeroBuckets": false,
-      "highlightCards": true,
       "id": 2,
-      "legend": {
-        "show": false
+      "options": {
+        "fieldOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "defaults": {
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": [],
+          "values": false
+        },
+        "orientation": "auto",
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
       },
-      "options": {},
-      "reverseYBuckets": false,
+      "pluginVersion": "6.6.0",
       "targets": [
         {
           "groupBy": [
@@ -72,7 +81,7 @@
             [
               {
                 "params": [
-                  "memory_usage_bytes"
+                  "cpu_usage_core_nanoseconds"
                 ],
                 "type": "field"
               },
@@ -86,7 +95,7 @@
             {
               "key": "container_name",
               "operator": "=",
-              "value": "phpmyadmin"
+              "value": "influxdb"
             }
           ]
         }
@@ -94,28 +103,7 @@
       "timeFrom": null,
       "timeShift": null,
       "title": "Panel Title",
-      "tooltip": {
-        "show": true,
-        "showHistogram": false
-      },
-      "type": "heatmap",
-      "xAxis": {
-        "show": true
-      },
-      "xBucketNumber": null,
-      "xBucketSize": null,
-      "yAxis": {
-        "decimals": null,
-        "format": "short",
-        "logBase": 1,
-        "max": null,
-        "min": null,
-        "show": true,
-        "splitFactor": null
-      },
-      "yBucketBound": "auto",
-      "yBucketNumber": null,
-      "yBucketSize": null
+      "type": "gauge"
     }
   ],
   "schemaVersion": 22,
@@ -130,7 +118,7 @@
   },
   "timepicker": {},
   "timezone": "",
-  "title": "PhpMyAdmin",
-  "uid": "7-atNt8Wk",
+  "title": "InfluxDB",
+  "uid": "LYH_Vt8Wk",
   "version": 1
 }

@@ -9,6 +9,7 @@ COPY sshd_config /etc/ssh/
 COPY index.html /var/www/html/
 COPY start.sh .
 
-RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/certs/selfsigned.key -out /etc/ssl/certs/selfsigned.crt -subj "/C=FR/ST=75/L=Paris/O=42/CN=frlindh"
+RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/certs/selfsigned.key -out /etc/ssl/certs/selfsigned.crt -subj "/C=FR/ST=75/L=Paris/O=42/CN=frlindh" && chmod 600 /etc/ssh/ssh_host_dsa_key && chmod 600 /etc/ssh/ssh_host_rsa_key
+
 EXPOSE 80 443 422
 CMD sh start.sh
